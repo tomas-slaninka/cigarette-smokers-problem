@@ -100,7 +100,7 @@ int pusherB(void *inputData) {
 		}
 		else if (data.isMatch == 1){
 			data.isMatch = 0;
-			assert(sem_post(data.paperSem) == 0);
+			assert(sem_post(data.tobaccoSem) == 0);
 		}
 		else
 			data.isPaper = 1;
