@@ -145,7 +145,7 @@ int smokerA(void *inputData) {
 		assert(sem_wait(data.tobaccoSem) == 0);
 		usleep(rand() % 1000);
 		printf("Smoker A - staring with tobacco\n");
-		assert(sem_post(data.tobaccoSem) == 0);
+		assert(sem_post(data.agentSem) == 0);
 	}
 }
 
@@ -159,7 +159,7 @@ int smokerB(void *inputData) {
 		assert(sem_wait(data.paperSem) == 0);
 		usleep(rand() % 1000);
 		printf("Smoker A - staring with paper\n");
-		assert(sem_post(data.paperSem) == 0);
+		assert(sem_post(data.agentSem) == 0);
 	}
 }
 
@@ -173,7 +173,7 @@ int smokerC(void *inputData) {
 		assert(sem_wait(data.matchSem) == 0);
 		usleep(rand() % 1000);
 		printf("Smoker A - staring with match\n");
-		assert(sem_post(data.matchSem) == 0);
+		assert(sem_post(data.agentSem) == 0);
 	}
 }
 
